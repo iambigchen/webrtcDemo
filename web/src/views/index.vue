@@ -335,9 +335,9 @@ async function getTargetDeviceMedia(videoId, audioId) {
     audio: { deviceId: audioId ? { exact: audioId } : undefined },
     video: {
       deviceId: videoId ? { exact: videoId } : undefined,
-      width: 1080,
-      height: 720,
-      frameRate: { ideal: 24, max: 24 },
+      width: 720,
+      height: 480,
+      frameRate: { ideal: 12, max: 24 },
     },
   };
   if (window.stream) {
