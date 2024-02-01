@@ -5,7 +5,7 @@ import { ElMessage } from "element-plus";
 import FingerprintJS from '@fingerprintjs/fingerprintjs';
 const fpPromise = FingerprintJS.load()
 let serverSocketUrl =
-  process.env.NODE_ENV === "development"
+  process.env.NODE_ENV !== "development"
     ? "wss://iambigchen.cloud/so"
     : "ws://127.0.0.1:18080";
 
