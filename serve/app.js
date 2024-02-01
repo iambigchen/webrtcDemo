@@ -12,7 +12,7 @@ var server=http.createServer(app)
 let io = require('socket.io')(server,{allowEIO3:true});
 
 //自定义命令空间  nginx代理 /mediaServerWsUrl { http://xxxx:18080/socket.io/ }
-// io = io.of('mediaServerWsUrl')
+io = io.of('so')
 
 server.listen(18080, async() => {
   console.log('服务器启动成功 *:18080');
