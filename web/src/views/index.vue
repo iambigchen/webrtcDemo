@@ -461,14 +461,13 @@ function handleError(error) {
   <div class="box">
     <el-form label-width="80">
       <el-row :gutter="20">
-        <el-col :span="7">
+        <el-col :span="9">
           <el-form-item label="摄像头">
             <el-select
               v-model="selectDevice.videoIn"
               class="m-2"
               placeholder="Select"
               size="large"
-              style="width: 240px"
               value-key="id"
             >
               <el-option
@@ -480,7 +479,7 @@ function handleError(error) {
             </el-select>
           </el-form-item>
         </el-col>
-        <el-col :span="7">
+        <el-col :span="9">
           <el-form-item label="麦克风">
             <el-select
               value-key="id"
@@ -488,7 +487,6 @@ function handleError(error) {
               class="m-2"
               placeholder="Select"
               size="large"
-              style="width: 240px"
             >
               <el-option
                 v-for="item in localDevice.audioIn"
@@ -528,17 +526,16 @@ function handleError(error) {
             <el-input v-model="userInfo.userId" style="width: 240px"></el-input>
           </el-form-item>
         </el-col> -->
-        <el-col :span="7">
+        <el-col :span="9">
           <el-form-item label="昵称">
             <el-input
               v-model="userInfo.nickname"
-              style="width: 240px"
             ></el-input>
           </el-form-item>
         </el-col>
-        <el-col :span="7">
+        <el-col :span="9">
           <el-form-item label="房间ID">
-            <el-input v-model="userInfo.roomId" style="width: 240px"></el-input>
+            <el-input v-model="userInfo.roomId"></el-input>
           </el-form-item>
         </el-col>
         <el-col :span="2">
@@ -587,7 +584,7 @@ function handleError(error) {
 .box {
   box-sizing: border-box;
   overflow-x: hidden;
-  padding: 20px 150px;
+  padding: 20px 1vw;
   margin: auto;
 }
 .video {
@@ -597,7 +594,7 @@ function handleError(error) {
 }
 .video video {
   width: 100%;
-  height: 480px;
+  /* height: 480px; */
 }
 .df {
   display: flex;
