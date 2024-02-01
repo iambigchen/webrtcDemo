@@ -545,7 +545,7 @@ function handleError(error) {
     </el-form>
     <div class="df">
       <div class="video">
-        <video id="video" autoplay controls></video>
+        <video id="video" autoplay controls webkit-playsinline="true" playsinline="true"></video>
         <div class="btnBox">
             <el-button type="primary" @click="share">
             {{ isShare ? "关闭共享" : "共享屏幕" }}
