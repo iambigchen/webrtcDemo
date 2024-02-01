@@ -227,8 +227,8 @@ function createRemoteDomVideoStream(domId, trick) {
     video.id = id;
     video.controls = false;
     video.autoplay = true;
-    video.playsinline = true
-    video.webkitPlaysinline = true
+    video.setAttribute('playsinline', true)
+    video.setAttribute('webkitPlaysinline', true)
     // video.muted = false;
     video.style.width = "100%";
   }
