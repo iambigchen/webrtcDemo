@@ -227,7 +227,7 @@ function createRemoteDomVideoStream(domId, trick) {
     video.id = id;
     video.controls = false;
     video.autoplay = true;
-    video.muted = false;
+    // video.muted = false;
     video.style.width = "100%";
     video.style.height = "200px";
   }
@@ -239,7 +239,7 @@ function createRemoteDomVideoStream(domId, trick) {
     let newStream = new MediaStream();
     newStream.addTrack(trick);
     video.srcObject = newStream;
-    video.muted = true;
+    // video.muted = true;
     parentDom.appendChild(video);
   }
 }
@@ -419,7 +419,7 @@ async function sure() {
     }
   }
   video.srcObject = localStream;
-  video.muted = true;
+  // video.muted = true;
 }
 async function share() {
   isShare.value = !isShare.value;
@@ -445,7 +445,7 @@ async function share() {
   localStream = newStream;
   let video = document.getElementById("video");
   video.srcObject = localStream;
-  video.muted = true;
+  // video.muted = true;
 }
 function handleError(error) {
   alert("摄像头无法正常使用，请检查是否占用或缺失");
@@ -545,8 +545,8 @@ function handleError(error) {
     </el-form>
     <div class="df">
       <div class="video">
-        <video id="video" autoplay controls muted></video>
-        <div>
+        <video id="video" autoplay controls></video>
+        <div class="btnBox">
             <el-button type="primary" @click="share">
             {{ isShare ? "关闭共享" : "共享屏幕" }}
             </el-button>
@@ -615,5 +615,9 @@ function handleError(error) {
 }
 .messageBoxItem p{
     color: #999;
+}
+.btnBox{
+  display: flex;
+  gap: 1vw;
 }
 </style>
