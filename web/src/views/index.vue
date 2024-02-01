@@ -227,9 +227,10 @@ function createRemoteDomVideoStream(domId, trick) {
     video.id = id;
     video.controls = false;
     video.autoplay = true;
+    video.playsinline = true
+    video.webkitPlaysinline = true
     // video.muted = false;
     video.style.width = "100%";
-    video.style.height = "200px";
   }
   let stream = video.srcObject;
   console.log("stream==>trick", stream, trick);
