@@ -11,10 +11,9 @@ var PeerConnection =
   window.mozRTCPeerConnection ||
   window.webkitRTCPeerConnection;
 var rtcPcParams = {
-    // iceTransportPolicy: 'relay', //强制走中继
+    iceTransportPolicy: 'relay', //强制走中继
     iceServers: [
-        // {urls: 'stun:stun.l.google.com:19302', username:'suc', credential:'suc001'}
-        {urls: 'stun:stun.l.google.com:19302'}
+        {urls: 'stun:iambigchen.cloud:3478', username: 'suke', credential:'suke119119'}
     ]
 }
 let localStream = null;
