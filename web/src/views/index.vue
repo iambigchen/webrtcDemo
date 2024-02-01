@@ -5,6 +5,7 @@ import { ElMessage } from "element-plus";
 import FingerprintJS from '@fingerprintjs/fingerprintjs';
 const fpPromise = FingerprintJS.load()
 let serverSocketUrl = "wss://iambigchen.cloud/so"
+// let serverSocketUrl = "ws://localhost:18080/so"
 var PeerConnection =
   window.RTCPeerConnection ||
   window.mozRTCPeerConnection ||
@@ -12,7 +13,8 @@ var PeerConnection =
 var rtcPcParams = {
     // iceTransportPolicy: 'relay', //强制走中继
     iceServers: [
-        // {urls: 'turn:x.x.x.x:3478', username:'suc', credential:'suc001'}
+        // {urls: 'stun:stun.l.google.com:19302', username:'suc', credential:'suc001'}
+        {urls: 'stun:stun.l.google.com:19302'}
     ]
 }
 let localStream = null;
