@@ -13,7 +13,8 @@ var PeerConnection =
 var rtcPcParams = {
     iceTransportPolicy: 'relay', //强制走中继
     iceServers: [
-        {urls: 'stun:iambigchen.cloud:3478', username: 'suke', credential:'suke119119'}
+        {urls: 'stun:iambigchen.cloud:3478', username: 'suke', credential:'suke119119'},
+        {urls: 'turn:iambigchen.cloud:3478', username: 'suke', credential:'suke119119'}
     ]
 }
 let localStream = null;
@@ -171,6 +172,7 @@ async function onPcEvent(pc, localUid, remoteUid) {
     createRemoteDomVideoStream(remoteUid, event.track);
   };
   pc.onicecandidate = (event) => {
+    console.log(`-----123----`, event)
     if (event.candidate) {
       linkSocket.emit("candidate", {
         targetUid: remoteUid,
